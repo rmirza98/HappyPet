@@ -1,0 +1,28 @@
+<div class="container">
+  
+    <div class="d-flex justify-content-between">
+      <h4>Editar linea de venta</h4>
+    </div>
+
+    <hr>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="cantidad">Cantidad:</label>
+              <input
+                formControlName="cantidad"
+                [(ngModel)]="ldv.cantidad"
+                id="cantidad"
+                type="text"
+                class="form-control">        
+            </div>
+        </div>
+
+        <button class="btn btn-info" type="submit">Actualizar</button>
+        <button routerLink="/ldv/indexLdv"  class="btn btn-info">Atrás</button>
+
+    </form>
+</div>

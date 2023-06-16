@@ -1,0 +1,14 @@
+
+    <div class="container">
+      <h1>Crear Comentario</h1>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="texto">Reseña:</label>
+          <input type="text" id="texto" name="texto" formControlName="texto" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-info">Crear Comentario</button>
+      </form>
+    </div>
+
+ 

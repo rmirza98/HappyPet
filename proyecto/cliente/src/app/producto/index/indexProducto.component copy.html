@@ -1,0 +1,57 @@
+<script>
+function recargar(){
+  window.location.reload();
+
+}
+</script>
+<html>
+  <body onload="recargar()">
+
+<section>
+
+    <div class="d-flex justify-content-between">
+      <h4>Lista de productos</h4>
+      <div *ngIf="usuario === 'administrador'">
+      <a routerLink="/producto/create" class="btn btn-success">Crear nuevo producto</a>
+      </div>
+    </div>
+
+    <br>
+    
+    <table class="table ">
+      <tr>
+      
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let producto of productos">
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.categoria.nombre }}</td>
+
+
+        <td>
+          <div *ngIf="usuario === 'administrador'">
+          <a  href="#" [routerLink]="['/producto/', 'edit', producto.id  ]" class="btn btn-primary">Edit</a>
+          </div>
+          <div *ngIf="usuario === 'administrador'">
+          <button type="button" (click)="deleteProducto(producto.id)" class="btn btn-danger">Delete</button>
+          </div>
+          <div>
+          <a href="#" [routerLink]="['/comentario/', 'create', producto.id  ]" class="btn btn-primary">Comentar</a>
+        </div>
+        <div>
+          <a href="#" [routerLink]="['/ldv/', 'createLdv', producto.id  ]" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+
+        </td>
+      </tr>
+    </table>
+ </section>
+</body>
+ </html>

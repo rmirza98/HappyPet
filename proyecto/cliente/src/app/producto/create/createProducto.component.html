@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alta de Producto</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Alta de Producto</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del producto" required [(ngModel)]="producto.nombre">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descripción:</label>
+        <input type="text" class="form-control" id="description" name="descripcion" rows="3" placeholder="Ingrese una descripción del producto" required  [(ngModel)]="producto.descripcion">
+      </div>
+
+      <div class="form-group">
+        <label for="price">Precio:</label>
+        <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese el precio del producto" required [(ngModel)]="producto.precio">
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoria:</label>
+        <select [(ngModel)]="producto.categoria" class="form-control" name="categoria">
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{ categoria.nombre }}</option>
+        </select>
+        </div>
+
+
+      <button type="submit" class="btn btn-info" (click)="submit()">Guardar Producto</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

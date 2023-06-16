@@ -1,0 +1,17 @@
+
+  
+  <div class="container">
+    <h1>Crear Categoria</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" formControlName="nombre" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-info">Crear Categoria</button>
+      <button href="#" routerLink="/categoria/index" class="btn btn-info">Atrás</button>
+
+    </form>
+  </div>
+
+  

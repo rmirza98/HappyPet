@@ -1,0 +1,28 @@
+<section>
+
+  <div *ngIf="usuario === 'administrador'">
+    <a routerLink="/categoria/create" class="btn btn-success">Crear nueva categoria</a>
+    </div>
+  <div class="container">
+    <h1 class="text-center mb-4">Categorías</h1>
+    <div class="row">
+      <div id="separao" class="col-lg-4 col-md-6" *ngFor="let categoria of categorias">
+        <div class="category-card">
+          <img [src]="'../../../assets/' + categoria.nombre + '.PNG'" alt="Imagen de la categoria" class="card-img-top product-image" style="display: block; margin: 10px auto 0;">
+
+          <h3 *ngIf="usuario === 'administrador'">{{ categoria.id }}</h3>
+          <h3>{{ categoria.nombre }}</h3>
+          <a [routerLink]="['/categoria/', 'mas', categoria.id  ]" class="btn btn-info">Ver más</a>
+          <div *ngIf="usuario === 'administrador'">
+            <a href="#" [routerLink]="['/categoria/', 'edit', categoria.id  ]" class="btn btn-info">Editar</a>
+            <button type="button" (click)="deleteCategoria(categoria.id)" class="btn btn-danger" >Borrar</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Incluir los enlaces a los archivos de scripts JavaScript de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

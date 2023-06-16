@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detalles de la Compra</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
+</head>
+<body>
+  <div class="container">
+    <h1>Detalles de la Compra</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre del Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Precio Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ldv of venta.ldvs"> 
+          <td class="text-center"> {{ ldv.product.nombre }}</td>
+        <td class="text-center">{{ ldv.cantidad }}</td>
+        <td class="text-center">{{ ldv.product.precio }}€ </td>
+         <td class="text-center">{{ calcularTotal(ldv) }}€</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="3" class="text-right">Total:</td>
+          <td >{{ total }}€</td>
+        </tr>
+      </tbody>
+    <a style="margin: 10px;" [routerLink]="['/venta/index']" class="btn btn-info btn-vermas">Atrás</a>
+
+    </table>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<section>
+  <div *ngIf="usuario === 'administrador'">
+    <a routerLink="/producto/create" class="btn btn-success">Crear nuevo producto</a>
+    </div>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let producto of productos">
+          <div class="card">
+            <img [src]="'../../../assets/' + producto.id + '.jpg'" alt="Imagen del producto" class="card-img-top product-image" style="display: block; margin: 10px auto 0;">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <p class="card-text">Precio: {{producto.precio}}€</p>
+              <p class="card-text">Categoria: {{ producto.categoria.nombre }}</p>
+
+            </div>
+            
+              <div>
+                <a style="margin: 2px 5px;" [routerLink]="['/producto/', 'mas', producto.id  ]" class="btn btn-info">Ver Más</a>
+              <a  style="margin: 2px 5px;" [routerLink]="['/comentario/', 'create', producto.id  ]" class="btn btn-info">Comentar</a>
+              <a style="margin: 2px 5px;" [routerLink]="['/ldv/', 'createLdv', producto.id  ]" class="btn btn-info">Añadir al carrito</a>
+            </div>
+
+
+            <div *ngIf="usuario === 'administrador'">
+              <a  style="margin: 2px 5px;" href="#" [routerLink]="['/producto/', 'edit', producto.id  ]" class="btn btn-info">Edit</a>
+              <button style="margin: 2px 5px;" type="button" (click)="deleteProducto(producto.id)" class="btn btn-danger">Delete</button>
+              </div>
+          </div>
+        </div>
+     
+    </div>
+  </div>
+</section>
+  <!-- Incluye los scripts de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

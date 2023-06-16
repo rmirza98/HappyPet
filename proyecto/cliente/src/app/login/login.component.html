@@ -1,0 +1,34 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Iniciar sesión</title>
+  <!-- Incluir los enlaces a los archivos CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="login-form">
+          <h2>Iniciar sesión</h2>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="nombre">Usuario</label>
+              <input formControlName="nombre" id="nombre" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Contraseña</label>
+              <input formControlName="pwd" id="pwd" type="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-info">Iniciar sesión</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Incluir los enlaces a los archivos de scripts JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

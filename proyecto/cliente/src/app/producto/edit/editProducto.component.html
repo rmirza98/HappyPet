@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Modificar Producto</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Modificar Producto</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+        <label for="name">Nombre del Producto:</label>
+        <input formControlName="nombre" [(ngModel)]="producto.nombre" id="nombre" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <input formControlName="descripcion" [(ngModel)]="producto.descripcion" id="descripcion" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio:</label>
+        <input [(ngModel)]="producto.precio" formControlName="precio" id="precio" type="text" class="form-control">
+      </div>
+
+     
+
+      <button class="btn btn-info" type="submit">Actualizar</button>
+        <button href="#" routerLink="/producto/index" class="btn btn-info">Cancelar</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

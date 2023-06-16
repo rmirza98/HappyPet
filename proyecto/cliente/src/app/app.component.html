@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HAPPYPET</title>
+  <!-- Incluir los enlaces a los archivos CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <header>
+    <h1><a routerLink="">HAPPYPET</a></h1>
+    
+    <div  *ngIf="usuario !== ''" style="position: absolute; top: 0; right: 0; padding: 1em; margin: 20px;color: white; background-color: #333;">
+      <span >Usuario Conectado: <br>{{usuario}}</span>
+  </div>
+
+    <nav>
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/producto/index">Productos</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" routerLink="/categoria/index">Categorias</a></li>
+        <li class="nav-item" *ngIf="usuario != ''"><a class="nav-link" routerLink="/ldv/indexLdv">Carrito</a></li>
+        <li class="nav-item" *ngIf="usuario != ''"><a class="nav-link" routerLink="/venta/index">Venta</a></li>
+        <li class="nav-item" *ngIf="usuario === ''"><a class="nav-link" routerLink="/login">Iniciar Sesión</a></li>
+        <li class="nav-item" *ngIf="usuario === ''"><a class="nav-link" routerLink="/usuario/create">Registrarse</a></li>
+        <li *ngIf="usuario === 'administrador'" class="nav-item"><a routerLink="/usuario/index"
+          class="nav-link">Usuarios</a></li>
+        <li class="nav-item" *ngIf="usuario != ''"><a routerLink="/login/cerrar" class="nav-link">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <main>
+    <router-outlet></router-outlet>
+   
+  </main>
+
+  <footer>
+
+    <p>© 2023 Nuestra Tienda de Mascotas. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Incluir los enlaces a los archivos de scripts JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

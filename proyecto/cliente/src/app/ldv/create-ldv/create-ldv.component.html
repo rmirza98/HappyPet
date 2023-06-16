@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="text-center">Añadir al carrito</h2>
+  <form class="text-center">
+    <div class="form-group" id="chico">
+      <label for="cantidad">Cantidad:</label>
+      <input type="text" name="ldv.cantidad" size="5" class="form-control" id="cantidad" placeholder="Ingrese la cantidad" [(ngModel)]="ldv.cantidad">
+    </div>
+    <button type="submit" class="btn btn-info" (click)="submit()">Añadir al carrito</button>
+  </form>
+</div>

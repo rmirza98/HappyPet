@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h2 class="text-center">Editar Categoría</h2>
+  
+  <form class="text-center"  [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group" id="chico">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" size="5" formControlName="nombre" class="form-control" id="nombre" placeholder="Ingrese el nombre" [value]="categoria?.nombre">
+    </div>
+    <button type="submit" class="btn btn-info" >Actualizar</button>
+    <button routerLink="/categoria/index" class="btn btn-info">Atrás</button>
+
+  </form>
+</div>

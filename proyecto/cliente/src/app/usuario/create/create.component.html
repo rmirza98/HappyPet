@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Registro</title>
+  <!-- Incluir los enlaces a los archivos CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="register-form">
+          <h2>Registro</h2>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="nombre">Usuario</label>
+              <input formControlName="nombre" id="nombre" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Contraseña</label>
+              <input formControlName="pwd" id="pwd"  type="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="correo">Email</label>
+              <input formControlName="correo" id="correo" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input formControlName="telefono" id="telefono"  type="tel" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="direccion">Dirección</label>
+              <input formControlName="direccion" id="direccion" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-info">Registrarse</button>
+            <button href="#" routerLink="" class="btn btn-info">Atrás</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Incluir los enlaces a los archivos de scripts JavaScript de Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

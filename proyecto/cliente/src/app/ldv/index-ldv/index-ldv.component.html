@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Carrito de Compras</title>
+  <!-- Incluir los enlaces a los archivos CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center mb-4">Carrito de Compras</h1>
+    <table class="table cart-table">
+      <thead>
+        <tr>
+          <th>Nombre del Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ldv of ldvs">
+          <td>{{ ldv.product.nombre }}</td>
+          <td>{{ ldv.cantidad }}</td>
+          <td>{{ calcularTotal(ldv) }}€</td>
+          <div> 
+            <a href="#" [routerLink]="['/ldv/', 'editLdv', ldv.id  ]" class="btn btn-info">Editar</a>
+            <button style="margin: 10px;" type="button" (click)="deleteLdv(ldv.id)" class="btn btn-danger">Cancelar</button>       
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cart-actions">
+      <p class="cart-total">Total: {{ total}}€</p>
+      <a href="#" class="btn btn-info" [routerLink]="['/venta/', 'createVenta']">Finalizar Compra</a>
+    </div>
+
+  </div>
+  <!-- Incluir los enlaces a los archivos de scripts JavaScript de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
